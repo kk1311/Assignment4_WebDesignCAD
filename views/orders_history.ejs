@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders History</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Orders History</h2>
+    <table border="1">
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Province</th>
+          <th>Postal Code</th>
+          <th>Phone</th>
+          <th>Email</th>
+          <th>Product 1 Qty</th>
+          <th>Product 2 Qty</th>
+          <th>Product 3 Qty</th>
+          <th>Product 1 Total Amount</th>
+          <th>Product 2 Total Amount</th>
+          <th>Product 3 Total Amount</th>
+          <th>Tax Amount</th>
+          <th>Shipping Charge</th>
+          <th>Total Amount With Tax</th>
+        </tr>
+        <% orders.forEach(function(order) { %>
+          <tr>
+            <td><%= order.name %></td>
+            <td><%= order.address %></td>
+            <td><%= order.city %></td>
+            <td><%= order.province %></td>
+            <td><%= order.postalCode %></td>
+            <td><%= order.phone %></td>
+            <td><%= order.email %></td>
+            <td><%= order.product1 %></td>
+            <td><%= order.product2 %></td>
+            <td><%= order.product3 %></td>
+            <td><%= order.product1TotalAmount ? '$' + order.product1TotalAmount.toFixed(2) : 'N/A' %></td>
+            <td><%= order.product2TotalAmount ? '$' + order.product2TotalAmount.toFixed(2) : 'N/A' %></td>
+            <td><%= order.product3TotalAmount ? '$' + order.product3TotalAmount.toFixed(2) : 'N/A' %></td>
+            <td><%= order.taxAmount ? '$' + order.taxAmount.toFixed(2) : 'N/A' %></td>
+            <td><%= order.shippingCharge ? '$' + order.shippingCharge.toFixed(2) : 'N/A' %></td>
+            <td><%= order.totalAmountWithTax ? '$' + order.totalAmountWithTax.toFixed(2) : 'N/A' %></td>
+          </tr>
+        <% }); %>
+      </table>
+</body>
+</html>

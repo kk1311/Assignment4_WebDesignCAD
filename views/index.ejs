@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Online Shopping Store</h1>
+        <h2>Please Enter Your Details Below:</h2>
+        <form action="/process" method="post" id="entryForm">
+            <label for="name">Enter Your Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="First Last" pattern="[A-Za-z ]+" required><br>
+            
+            <label for="address">Enter Your Address:</label><br>
+            <input type="text" id="address" name="address" placeholder="123 King Street" required><br>
+            
+            <label for="city">Enter Your City:</label><br>
+            <input type="text" id="city" name="city" placeholder="Kitchner" pattern="[A-Za-z ]+" required><br>
+            
+            <label for="postalCode">Enter Your Postal Code:</label><br>
+            <input type="text" id="postalCode" name="postalCode" placeholder="A1B2C3" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]" required><br>
+            
+            <label for="province">Enter Your Province:</label><br>
+            <select id="province" name="province" required>
+                <option value="">Choose Your Province</option>
+                <option value="Ontario">Ontario</option>
+                <option value="Alberta">Alberta</option>
+                <option value="Nova Scotia">Nova Scotia</option>
+            </select><br>
+            
+            <label for="phone">Enter Your Phone Number:</label><br>
+            <input type="text" id="phone" name="phone" pattern="[0-9]{10}" placeholder="1234567890" required><br>
+            
+            <label for="email">Enter Your Email Address:</label><br>
+            <input type="text" id="email" name="email" placeholder="abcd@gmail.com" required><br>
+            
+            <label for="product1">Product 1 (Price: $5):</label><br>
+            <input type="text" id="product1" name="product1" placeholder="Enter Quantity" required><br>
+            
+            <label for="product2">Product 2 (Price: $8):</label><br>
+            <input type="text" id="product2" name="product2" placeholder="Enter Quantity" required><br>
+            
+            <label for="product3">Product 3 (Price: $10):</label><br>
+            <input type="text" id="product3" name="product3" placeholder="Enter Quantity"><br>
+
+            <label for="deliveryTime">Delivery Time:</label><br>
+            <select id="deliveryTime" name="deliveryTime" required>
+                <option value="">Choose Delivery Time</option>
+                <option value="7">7 days</option>
+                <option value="5">5 days</option>
+                <option value="2">2 days</option>
+            </select><br>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
